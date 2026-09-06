@@ -4,3 +4,8 @@ out/
 *.tsbuildinfo
 .env*
 !.env.example
+_old_backup/
+vite-project/
+.vscode/
+
+

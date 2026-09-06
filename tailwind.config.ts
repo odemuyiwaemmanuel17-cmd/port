@@ -15,24 +15,57 @@ const config: Config = {
 				mono: ['var(--font-jetbrains)', 'JetBrains Mono', 'monospace'],
 			},
 			colors: {
-				ink: '#080a0c',
-				paper: '#f2f0e9',
-				acid: '#d7ff55',
-				'acid-hover': '#e4ff88',
-				surface: {
-					DEFAULT: 'rgba(18, 22, 26, 0.72)',
-					solid: '#111518',
-					hover: 'rgba(26, 32, 38, 0.85)',
-					border: 'rgba(255, 255, 255, 0.08)',
-					'border-hover': 'rgba(215, 255, 85, 0.35)',
+				cyber: {
+					bg: '#090d16',
+					card: 'rgba(15, 23, 42, 0.65)',
+					surface: 'rgba(17, 24, 39, 0.8)',
+					border: 'rgba(99, 102, 241, 0.15)',
+					'border-cyan': 'rgba(6, 182, 212, 0.3)',
+					'border-hover': 'rgba(6, 182, 212, 0.5)',
+				},
+				cyan: {
+					glow: '#06b6d4',
+					dim: '#0891b2',
+				},
+				indigo: {
+					glow: '#6366f1',
+					deep: '#4f46e5',
+				},
+				violet: {
+					glow: '#8b5cf6',
+					electric: '#7c3aed',
+				},
+				telemetry: {
+					green: '#10b981',
+					amber: '#f59e0b',
+					cyan: '#06b6d4',
 				},
 			},
 			boxShadow: {
-				acid: '0 0 0 1px rgba(215,255,85,.24), 0 18px 60px rgba(215,255,85,.12)',
-				glass: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+				'cyan-glow': '0 0 20px -3px rgba(6, 182, 212, 0.4), 0 0 8px -2px rgba(6, 182, 212, 0.2)',
+				'indigo-glow': '0 0 25px -5px rgba(99, 102, 241, 0.35)',
+				'violet-glow': '0 0 25px -5px rgba(139, 92, 246, 0.35)',
+				'glass-card': '0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05)',
 			},
 			animation: {
 				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'radar-sweep': 'radarSweep 4s linear infinite',
+				'scanline': 'scanline 8s linear infinite',
+				'float': 'float 6s ease-in-out infinite',
+			},
+			keyframes: {
+				radarSweep: {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' },
+				},
+				scanline: {
+					'0%': { transform: 'translateY(-100%)' },
+					'100%': { transform: 'translateY(1000%)' },
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-8px)' },
+				},
 			},
 		},
 	},
@@ -40,3 +73,4 @@ const config: Config = {
 };
 
 export default config;
+
