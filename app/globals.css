@@ -1702,3 +1702,73 @@ button {
     animation: none !important;
   }
 }
+/* Scene-specific stills remain visible while WebGL loads or is unavailable. */
+svg.reference-fallback {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  perspective: none;
+  overflow: visible;
+}
+[data-ready="true"]:not([data-fallback]) > svg.reference-fallback {
+  display: none;
+}
+.fallback-sculpture-shape {
+  transform-origin: 50% 50%;
+  animation: sculptureTurn 18s ease-in-out infinite;
+}
+.fallback-orbit {
+  transform-origin: 50% 50%;
+  animation: sphereOrbit 45s linear infinite;
+}
+.fallback-door {
+  transform-origin: 244px 270px;
+  animation: cubeDoor 9s ease-in-out infinite;
+}
+.fallback-cube {
+  transform-origin: 50% 50%;
+  animation: cubeFloat 9s ease-in-out infinite;
+}
+[data-paused="true"] svg * {
+  animation-play-state: paused !important;
+}
+.fallback-hero {
+  filter: drop-shadow(0 0 16px #20133133);
+}
+@keyframes sculptureTurn {
+  0%,
+  100% {
+    transform: rotate(-18deg) scale(0.95);
+  }
+  50% {
+    transform: rotate(24deg) scale(1.06);
+  }
+}
+@keyframes sphereOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes cubeDoor {
+  0%,
+  20%,
+  90%,
+  100% {
+    transform: skewY(0) scaleX(1);
+  }
+  45%,
+  65% {
+    transform: skewY(25deg) scaleX(-0.6);
+  }
+}
+@keyframes cubeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import ReferenceFallback from "./ReferenceFallback";
 import * as THREE from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 
@@ -217,7 +218,7 @@ export default function ReferenceScene({
         moving.push(pod);
         track.add(pod);
       }
-      objects.position.y = -0.5;
+      objects.position.y = 0.9;
     } else if (variant === "sculpture") {
       const points = Array.from({ length: 100 }, (_, i) => {
         const t = (i / 100) * Math.PI * 2;
@@ -453,6 +454,7 @@ export default function ReferenceScene({
       if (variant === "wave")
         objects.rotation.y = -0.35 + Math.sin(time * 0.25) * 0.12;
       renderer.render(scene, camera);
+      el.dataset.ready = "true";
     };
     resize();
     raf = requestAnimationFrame(render);
@@ -487,11 +489,12 @@ export default function ReferenceScene({
     };
   }, [variant]);
   return (
-    <div className={`reference-scene scene-${variant}`} ref={host}>
-      <div className="reference-fallback" aria-hidden="true">
-        <i />
-        <i />
-      </div>
+    <div
+      data-paused={paused}
+      className={`reference-scene scene-${variant}`}
+      ref={host}
+    >
+      <ReferenceFallback variant={variant} />
     </div>
   );
 }
