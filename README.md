@@ -1,21 +1,18 @@
-# Emmanuel Odemuyiwa — 3D portfolio
+# Emmanuel Odemuyiwa — Optical Archive
 
-A Next.js/Three.js portfolio rebuilt around the supplied 24-second video reference.
+A continuous, blue-eye scrollytelling portfolio built with Next.js and Three.js. The confirmed reference is [High Tech Logo V04 Eye](https://in.pinterest.com/pin/661395895259111847/). Its optical rings, cyan circuitry, dark lens and technical atmosphere are recreated procedurally for an interactive website. No original template assets are redistributed.
 
-## Reference sequence
+## Scroll journey
 
-1. Centered two-line headline, thin outlined buttons, diagonal chrome/glass structures and an arched track.
-2. A large reflective dark sculpture with staggered text on the left and right, rotating with scroll.
-3. Centered gradient heading followed by the reference's asymmetric, thin-bordered grid: coins, circular marketplace motif, glowing chrome spheres, skill symbols, keyboard keys, an engineering wave and a browser studio.
-4. An opening black cube and illuminated sphere above the closing invitation.
+Vision → background and skills → Compbuy → HandyTrust → AppMD → Batch Image & Collage Studio → AeroCAD → contact.
 
-The design follows the video's black background, white sans-serif typography, magenta/blue accents, compact navigation, scene order and layout proportions. Geometry is recreated procedurally; the original site's 3D models, textures and source animation files are not contained in the supplied video, so these are reconstructed assets rather than pixel-identical originals.
+One persistent eye changes ring alignment, depth, aperture and camera framing with scroll. Clicking the lens opens the current project or background. A matching vector lens follows the same scroll choreography when WebGL is unavailable. Chapter navigation, ordinary links and reduced motion provide direct access to every section.
 
-All five projects, complete project details/source excerpts, original URLs, skills, biography, statistics, terminal commands and guestbook content remain accessible. GitHub, LinkedIn, X and email links use inline SVG icons. Guestbook additions stay in the visitor's browser; email opens their mail application.
+All original project descriptions, architecture notes, features, code excerpts, skills, statistics, biography, social links, terminal commands and guestbook content are preserved. GitHub, LinkedIn, X and email use their SVG symbols. Guestbook additions are local to the visitor's browser. Project repository links and original claims are retained with their existing labels.
 
 ## Development
 
-Node 22.6+ (24 recommended).
+Node 22.6+.
 
 ```sh
 npm ci
@@ -24,12 +21,14 @@ npm run build
 npm test
 ```
 
-- `data/portfolio-data.ts`: original portfolio content.
-- `components/ReferenceExperience.tsx`: reference-led composition and interactions.
-- `components/ReferenceScene.tsx`: six distinct procedural 3D shots, responsive cameras, visible-scene rendering, reduced motion and resource cleanup.
-- `components/PortfolioExperience.tsx`: reused project dialogs, terminal and guestbook; the prior orbital composition is retained as unused source history.
-- `app/globals.css`: desktop/mobile presentation.
+- `components/EyeExperience.tsx`: eight chapters, scroll progression, lens actions, dialogs and navigation.
+- `components/EyeScene.tsx`: procedural Three.js lens, instanced ring ticks, circuitry, cleanup, context-loss fallback and SVG equivalent.
+- `lib/eye-timeline.ts`: bounded scene choreography shared by WebGL and fallback.
+- `data/portfolio-data.ts`: original content.
+- `components/PortfolioExperience.tsx`: reusable project, guestbook and terminal panels. Older compositions remain as unused source history.
 
-The production branch is connected to Vercel. Current production URL: https://portfolio-smoky-one-8w5itm22k4.vercel.app/
+## Hosting and validation
 
-The original supplied project claims and links are preserved, not independently verified. Project “live” links currently point to this repository and are labeled accordingly. The Pinterest short link was inaccessible; the attached video is the inspected visual reference.
+Production: https://portfolio-smoky-one-8w5itm22k4.vercel.app/
+
+The main branch deploys through the existing Vercel connection. Build includes TypeScript and lint validation. The cloud review browser does not offer WebGL, so its visual review exercises the vector fallback; hardware WebGL rendering still needs a GPU browser check.

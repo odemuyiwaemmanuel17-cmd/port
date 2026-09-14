@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://github.com/odemuyiwaemmanuel17-cmd",
+    url: "https://portfolio-smoky-one-8w5itm22k4.vercel.app/",
     title:
       "Emmanuel Odemuyiwa | Aerospace Engineering & Full-Stack / Mobile Developer",
     description:

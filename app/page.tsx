@@ -1,4 +1,2 @@
-import ReferenceExperience from "../components/ReferenceExperience";
-export default function Home() {
-  return <ReferenceExperience />;
-}
+import EyeExperience from "../components/EyeExperience";
+export default function Home() { return <EyeExperience />; }
