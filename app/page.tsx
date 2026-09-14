@@ -1,4 +1,4 @@
-import PortfolioExperience from "../components/PortfolioExperience";
+import ReferenceExperience from "../components/ReferenceExperience";
 export default function Home() {
-  return <PortfolioExperience />;
+  return <ReferenceExperience />;
 }

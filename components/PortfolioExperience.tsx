@@ -49,7 +49,7 @@ export function BrandIcon({ name }: { name: string }) {
     </svg>
   );
 }
-function Dialog({
+export function Dialog({
   title,
   onClose,
   children,
@@ -97,7 +97,7 @@ function Dialog({
     </dialog>
   );
 }
-function ProjectDetails({ project }: { project: Project }) {
+export function ProjectDetails({ project }: { project: Project }) {
   const [tab, setTab] = useState("Story");
   return (
     <>
@@ -187,7 +187,7 @@ function ProjectDetails({ project }: { project: Project }) {
     </>
   );
 }
-function ConsolePanel() {
+export function ConsolePanel() {
   const [value, setValue] = useState("");
   const [logs, setLogs] = useState<{ cmd: string; output: ReactNode }[]>([]);
   const output = useRef<HTMLDivElement>(null);
@@ -308,7 +308,7 @@ function ConsolePanel() {
     </>
   );
 }
-function GuestbookPanel() {
+export function GuestbookPanel() {
   const [entries, setEntries] = useState<GuestbookEntry[]>(guestbookEntries);
   const [notice, setNotice] = useState("");
   useEffect(() => {
