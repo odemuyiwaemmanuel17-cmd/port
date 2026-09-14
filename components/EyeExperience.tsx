@@ -6,7 +6,8 @@ import { personalInfo, projects, skillCategories, socialLinks, stats } from "../
 import type { Project } from "../types/portfolio";
 import { BrandIcon, Dialog, ProjectDetails, ConsolePanel, GuestbookPanel } from "./PortfolioExperience";
 import { eyePose } from "../lib/eye-timeline";
-const Scene = dynamic(() => import("./EyeScene"), { ssr:false });
+import EyeFallback from "./EyeFallback";
+const Scene = dynamic(() => import("./EyeScene"), { ssr:false, loading:()=> <div className="eye-render" aria-hidden="true"><EyeFallback/></div> });
 const nav = [{id:"home",name:"Home"},{id:"about",name:"About"},{id:"projects",name:"Projects"},{id:"contact",name:"Contact"}];
 const chapterNames = ["Vision", "Perspective", ...projects.map(p=>p.title), "Connect"];
 const projectCopy = [

@@ -1808,3 +1808,7 @@ svg.reference-fallback {
 @media(max-height:700px) and (max-width:640px){.eye-render{height:55svh;top:-2svh}.eye-lens-target{top:24svh}.eye-copy h1{font-size:46px}.eye-copy h2{font-size:32px}.eye-description{font-size:11px}.eye-kicker{margin-bottom:8px}.eye-chapter-stage{padding-bottom:87px}.eye-socials{margin:12px 0}}
 @media(prefers-reduced-motion:reduce){.eye-assembly,.eye-ring-odd,.eye-ring-even{transform:none!important}.eye-chapter-stage{opacity:1!important}.eye-lens-target,.eye-link{transition:none}}
 html{scroll-padding-top:0}.eye-experience{font-family:Space,"Trebuchet MS",sans-serif;--accent:#3ecbfa}.eye-experience ::selection{background:#176888}.eye-experience :focus-visible{outline-color:#8ee6ff}
+.eye-experience .studio-dialog{border-color:#2b637e;background:#06111a}.eye-experience .studio-dialog::backdrop{background:#000a11c9;backdrop-filter:blur(9px)}.eye-experience .tabs button[aria-selected=true]{color:#9deaff;border-color:#35c2ef}.eye-experience .eyebrow{color:#81c5e2}.eye-experience .terminal-input-row{border-color:#305a70}
+.eye-ring-odd{animation:eyeAmbient 180s linear infinite}.eye-ring-even{animation:eyeAmbient 240s linear infinite reverse}.eye-experience[data-paused=true] .eye-ring-odd,.eye-experience[data-paused=true] .eye-ring-even{animation-play-state:paused}
+@keyframes eyeAmbient{to{rotate:360deg}}
+@media(prefers-reduced-motion:reduce){.eye-ring-odd,.eye-ring-even{animation:none!important}}
