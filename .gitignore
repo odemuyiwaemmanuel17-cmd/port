@@ -7,10 +7,5 @@ out/
 _old_backup/
 vite-project/
 .vscode/
-.roo/
-.agents/
-.claude/
-.claude-plugin/
-*.mp4
 
 
