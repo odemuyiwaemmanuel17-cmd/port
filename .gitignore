@@ -1,11 +1,12 @@
 node_modules/
 .next/
 out/
+dist/
+.roo/
 *.tsbuildinfo
 .env*
 !.env.example
 _old_backup/
 vite-project/
 .vscode/
-
-
+public/fonts/*.mp4
